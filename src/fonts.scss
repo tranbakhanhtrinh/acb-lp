@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'Bold';
+    src: url('./assets/fonts/SVN-Effra-Bold.otf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face{
+    font-family: 'Regular';
+    src: url('./assets/fonts/SVN-Effra-Regular.otf');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+}
+
+$font_Regular: 'Regular';
+$font_Bold: 'Bold';

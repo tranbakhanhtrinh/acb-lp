@@ -1,0 +1,19 @@
+@import '../../../fonts.scss';
+.NavigationItem{
+    display:flex;
+    align-items:center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.125rem;
+    font-family: $font_Regular;
+    &:hover{
+        background-color: #fff;
+        border-radius: 30px 0 0 30px;
+        color:#20419A;
+        cursor: pointer;
+    }
+}
+.MenuIcon{
+    margin-right: 1rem;
+}
