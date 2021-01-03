@@ -1,0 +1,10 @@
+.Social{
+    img{
+         margin-right: 1.5rem;
+    }
+   &:last-child{
+       img{
+           margin-right:0
+       }
+   }
+}

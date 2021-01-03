@@ -2,5 +2,9 @@
     background: #20419A;
     border-radius: 0px 100px 0px 0px;
     padding-top: 100px;
-    height: 100vh;
+    height: calc(100% - 100px);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }

@@ -1,4 +1,7 @@
+@import '../../../keyframes.scss';
 .BgWhite{
     background-color: white;
     padding: 2rem 0;
+    transition: all 0.5s ease-in-out;
+    animation: opacity 1s;
 }

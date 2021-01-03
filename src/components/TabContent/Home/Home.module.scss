@@ -1,0 +1,102 @@
+@import '../../../keyframes.scss';
+.Home{
+    position: relative;
+    background-image: url("../../../assets/images/bg_home.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    animation: opacity 1s;
+    .slogan{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        @media screen and (min-width:1900px){
+            width: 65%;
+        }
+    }
+    .Content{
+        padding-left: 2rem;
+        max-width: 50%;
+        width: 100%;
+        ul{
+            list-style-type: none;
+            padding-top: 20%;
+            padding-left:0;
+            li{
+                background-image: url("../../../assets/images/check.svg");
+                background-repeat:no-repeat;
+                background-size: 24px;
+                background-position: 0px 2px;
+                padding-left:2.5rem;
+                font-size: 1.125rem;
+                color: #20419A;
+                margin-bottom: 1.5rem;
+                div {
+                    font-size: 1.5rem;
+                    color: #fff;
+                    text-transform:uppercase;
+                    background-color: #00AEEF;
+                    width: max-content;
+                    width: -moz-max-content;
+                    width: -webkit-max-content;
+                    padding: .2rem 1.5rem;
+                    margin: .5rem 0;
+                    border-radius: 0px 30px 30px 0px;
+                }
+            }
+            @media screen and (min-width:1900px){
+                padding-top: 40%;
+            }
+        }
+        p{
+            color: #20419A;
+            font-size: 1.125rem;
+        }
+        .Home_ft{
+            p{
+                &:first-child{
+                    text-transform: uppercase;
+                    font-size:2.25rem;
+                    margin-bottom: 0;
+                }
+                &:last-child{
+                    color: #000;
+                    strong{
+                        font-weight: 700;
+                        color: #00AEEF;
+                    }
+                }
+            }
+            @media screen and (min-width:1500px){
+                margin-top: 15%;
+            }
+        }
+        @media screen and (min-width:1200px) and(max-width:1399px){
+            
+        }
+    }
+    .slider{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 9;
+        width: 50%;
+        @media screen and (min-width:1200px) and(max-width:1399px){
+            bottom: 15%;
+        }
+        @media screen and (min-width:1400px) and(max-width:1599px){
+            bottom: 11%;
+        }
+        @media screen and (min-width:1600px) and(max-width:1799px){
+            bottom: 10%;
+        }
+        @media screen and (min-width:1900px){
+            bottom: 13%;
+        }
+        @media screen and (min-width:2500px){
+            bottom: 20%;
+        }
+    }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 
+import classes from './TabContent.module.scss';
 const tabContent = props => {
     return (
-        <p data-tab={props.dataTab}>{props.content}</p>
+        <div className={classes.TabContent} data-tab={props.dataTab}>
+            {props.content}
+        </div>
     )
 }
 

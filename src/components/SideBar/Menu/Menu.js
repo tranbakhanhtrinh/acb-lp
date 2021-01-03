@@ -4,9 +4,7 @@ import classes from './Menu.module.scss'
 
 const menu = props => (
     <div className={classes.Menu}>
-        <ul>
-            {props.children}
-        </ul>
+        {props.children}
     </div>
 )
 

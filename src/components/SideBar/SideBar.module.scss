@@ -1,9 +1,10 @@
 .SideBar{
     @media screen and (min-width:1200px){
-        max-width: 25rem;
+        width: 100%;
+        max-width: 22rem;
     }
     @media screen and (min-width:768px) and (max-width:1199.98px){
-        max-width: 25rem;
+        max-width: 22rem;
     }
     @media screen and (max-width:575.98px){
         max-width: 100%;
