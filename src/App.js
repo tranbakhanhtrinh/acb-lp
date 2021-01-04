@@ -29,6 +29,7 @@ const NavigationItem = lazy(() => import('./components/NavigationItem/Navigation
 const TabButtons = lazy(() => import('./components/SideBar/Menu/TabButtons/TabButtons'));
 const Social = lazy(() => import('./components/Social/Social'));
 const Home = lazy(() => import('./components/TabContent/Home/Home'));
+const Gift = lazy(() => import('./components/TabContent/Gift/Gift'));
 
 class App extends Component {
     constructor(props) {
@@ -111,7 +112,7 @@ class App extends Component {
                     clickedToActivateTab={this.changeActive} />
             )
         })
-        let cpn = [<Home />, <Logo imgSrc={logo} alt="logo" />, <Logo imgSrc={logo} alt="logo" />, "Wheel"]
+        let cpn = [<Home />, <Gift />, <Logo imgSrc={logo} alt="logo" />, "Wheel"]
         const tabContent = this.state.tab.map(item => {
             return (
                 this.state.isActive === item.id && <TabContent key={parseInt(item.id) * Math.random()} dataTab={item.id} content={cpn[parseInt(item.id) - 1]} />
@@ -127,9 +128,9 @@ class App extends Component {
                                 {tabTitle}
                             </TabButtons>
                             <div className={classes.SocialSection}>
-                                <Social href="http://facebook.com/" target="_blank" src={fb} alt="Facebook" />
-                                <Social href="http://youtube.com/" target="_blank" src={yt} alt="Youtube" />
-                                <Social href="http://instagram.com/" target="" src={callIcon} alt="" />
+                                <Social href="https://www.facebook.com/NganHangACB" target="_blank" src={fb} alt="Facebook" />
+                                <Social href="https://www.youtube.com/channel/UCmHyuC-eNeCGn7bf64Nt66Q" target="_blank" src={yt} alt="Youtube" />
+                                <Social href="tel:1900545486" target="" src={callIcon} alt="Phone" />
                             </div>
                         </Menu>
                     </SideBar>

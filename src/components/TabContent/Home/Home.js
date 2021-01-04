@@ -8,7 +8,7 @@ import img3 from '../../../assets/images/img3.svg';
 
 const home = () => {
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
