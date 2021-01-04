@@ -1,4 +1,6 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component } from 'react';
+
+import { isMobile } from 'react-device-detect';
 
 import logo from './assets/images/logo.svg';
 import homeIcon from './assets/images/home.svg';
@@ -15,21 +17,28 @@ import callIcon from './assets/images/call.svg';
 
 import classes from './App.module.scss';
 
-// import SideBar from './components/SideBar/SideBar';
-// import TabContent from './components/TabContent/TabContent';
-// import Logo from './components/SideBar/Logo/Logo'
-// import Menu from './components/SideBar/Menu/Menu';
-// import NavigationItem from './components/NavigationItem/NavigationItem';
+import SideBar from './components/SideBar/SideBar';
+import TabContent from './components/TabContent/TabContent';
+import Logo from './components/SideBar/Logo/Logo'
+import Menu from './components/SideBar/Menu/Menu';
+import NavigationItem from './components/NavigationItem/NavigationItem';
+import TabButtons from './components/SideBar/Menu/TabButtons/TabButtons';
+import Social from './components/Social/Social';
+import Home from './components/TabContent/Home/Home';
+import Gift from './components/TabContent/Gift/Gift';
+import HaiLoc from './components/TabContent/HaiLoc/HaiLoc';
+import Wheel from './components/TabContent/Wheel/Wheel';
+import MenuButton from './components/MenuButton/MenuButton';
 
-const Logo = lazy(() => import('./components/SideBar/Logo/Logo'))
-const SideBar = lazy(() => import('./components/SideBar/SideBar'));
-const TabContent = lazy(() => import('./components/TabContent/TabContent'));
-const Menu = lazy(() => import('./components/SideBar/Menu/Menu'));
-const NavigationItem = lazy(() => import('./components/NavigationItem/NavigationItem'));
-const TabButtons = lazy(() => import('./components/SideBar/Menu/TabButtons/TabButtons'));
-const Social = lazy(() => import('./components/Social/Social'));
-const Home = lazy(() => import('./components/TabContent/Home/Home'));
-const Gift = lazy(() => import('./components/TabContent/Gift/Gift'));
+// const Logo = lazy(() => import('./components/SideBar/Logo/Logo'))
+// const SideBar = lazy(() => import('./components/SideBar/SideBar'));
+// const TabContent = lazy(() => import('./components/TabContent/TabContent'));
+// const Menu = lazy(() => import('./components/SideBar/Menu/Menu'));
+// const NavigationItem = lazy(() => import('./components/NavigationItem/NavigationItem'));
+// const TabButtons = lazy(() => import('./components/SideBar/Menu/TabButtons/TabButtons'));
+// const Social = lazy(() => import('./components/Social/Social'));
+// const Home = lazy(() => import('./components/TabContent/Home/Home'));
+// const Gift = lazy(() => import('./components/TabContent/Gift/Gift'));
 
 class App extends Component {
     constructor(props) {
@@ -66,10 +75,12 @@ class App extends Component {
                 },
             ],
             isActive: '1',
-            hoverActive: false
+            hoverActive: false,
+            isOpen: false
         }
         this.hoverOn = this.hoverOn.bind(this);
         this.hoverOut = this.hoverOut.bind(this);
+        this.openMenu = this.openMenu.bind(this);
     }
     shouldComponentUpdate(nextProps, nextState) {
         if (this.state.isActive !== nextState.isActive) {
@@ -80,9 +91,9 @@ class App extends Component {
     // componentDidUpdate() {
     //     console.log("test update");
     // }
-    // componentDidMount() {
-    //     console.log("test");
-    // }
+    componentDidMount() {
+        console.log(this.state.isOpen);
+    }
     hoverOn = (e, inputId) => {
         const list = [...this.state.tab];
         const updateMenuIcon = list[parseInt(inputId) - 1].menuIconActive;
@@ -98,12 +109,15 @@ class App extends Component {
     changeActive = e => {
         this.setState({ isActive: e.target.getAttribute("data-tab") })
     }
+    openMenu = () => {
+        this.setState(prevState => ({ isOpen: !prevState.isOpen }))
+    }
     render() {
         const tabTitle = this.state.tab.map(tab => {
             return (
                 <NavigationItem
                     key={tab.id}
-                    style={{ backgroundImage: `url(${this.state.isActive === tab.id ? tab.menuIconActive : tab.menuIcon})`, backgroundSize: "25px", backgroundRepeat: "no-repeat", backgroundPosition: "15px 18px" }}
+                    style={{ backgroundImage: `url(${this.state.isActive === tab.id ? tab.menuIconActive : tab.menuIcon})` }}
                     isActive={this.state.isActive}
                     dataTab={tab.id}
                     hoverOn={e => this.hoverOn(e, tab.id)}
@@ -112,30 +126,32 @@ class App extends Component {
                     clickedToActivateTab={this.changeActive} />
             )
         })
-        let cpn = [<Home />, <Gift />, <Logo imgSrc={logo} alt="logo" />, "Wheel"]
+        let cpn = [<Home />, <Gift />, <HaiLoc />, <Wheel />]
         const tabContent = this.state.tab.map(item => {
             return (
                 this.state.isActive === item.id && <TabContent key={parseInt(item.id) * Math.random()} dataTab={item.id} content={cpn[parseInt(item.id) - 1]} />
             )
         })
         return (
-            <div className="App">
-                <Suspense fallback={<div>...Loading...</div>}>
-                    <SideBar>
-                        <Logo imgSrc={logo} alt="logo" />
-                        <Menu>
-                            <TabButtons>
-                                {tabTitle}
-                            </TabButtons>
-                            <div className={classes.SocialSection}>
-                                <Social href="https://www.facebook.com/NganHangACB" target="_blank" src={fb} alt="Facebook" />
-                                <Social href="https://www.youtube.com/channel/UCmHyuC-eNeCGn7bf64Nt66Q" target="_blank" src={yt} alt="Youtube" />
-                                <Social href="tel:1900545486" target="" src={callIcon} alt="Phone" />
-                            </div>
-                        </Menu>
-                    </SideBar>
-                    {tabContent}
-                </Suspense>
+            <div className={classes.App}>
+                {/* <Suspense fallback={<div>...Loading...</div>}> */}
+                <SideBar isOpen={this.state.isOpen}>
+                    <Logo imgSrc={logo} alt="logo" />
+                    <Menu>
+                        <TabButtons>
+                            {tabTitle}
+                        </TabButtons>
+                        <div className={classes.SocialSection}>
+                            <Social href="https://www.facebook.com/NganHangACB" target="_blank" src={fb} alt="Facebook" />
+                            <Social href="https://www.youtube.com/channel/UCmHyuC-eNeCGn7bf64Nt66Q" target="_blank" src={yt} alt="Youtube" />
+                            <Social href="tel:1900545486" target="" src={callIcon} alt="Phone" />
+                        </div>
+                    </Menu>
+                </SideBar>
+                {isMobile && <img src={logo} alt="logo mobile" className={classes.logoMobile} />}
+                <MenuButton isMobile={isMobile} isOpen={this.state.isOpen} clicked={this.openMenu} />
+                {tabContent}
+                {/* </Suspense> */}
             </div>
         );
     }

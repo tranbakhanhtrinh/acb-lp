@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './Gift.module.scss';
 
 import giftSmall from '../../../assets/images/gift_small.svg';
@@ -32,16 +33,16 @@ const gift = () => (
                 </p>
             </div>
             <div className={classes.Content__ft}>
-                <div className={classes.Content__ft_hd}>
+                <div className={classes.Content__ft__hd}>
                     Đa dạng sản phẩm để Bạn lựa chọn
                 </div>
-                <ul className={classes.Content__ft_list}>
-                    Tiết kiệm Truyền thống kỳ hạn từ 1 tháng trở lên
-                    Tiết kiệm Phúc An Lộc kỳ hạn từ 1 tháng trở lên
-                    Tiết kiệm Đại Lộc kỳ hạn từ 6 tháng trở lên
-                    Tích lũy Thiên Thần Nhỏ, Thành Tài, An Cư Lập Nghiệp, Tương lai
-                    Tiền gửi có kỳ hạn từ 1 tháng trở lên
-                    Gói Gia Đình Việt (tiền gửi tiết kiệm theo gói)
+                <ul className={classes.Content__ft__list}>
+                    <li>Tiết kiệm Truyền thống kỳ hạn từ 1 tháng trở lên</li>
+                    <li>Tiết kiệm Phúc An Lộc kỳ hạn từ 1 tháng trở lên</li>
+                    <li>Tiết kiệm Đại Lộc kỳ hạn từ 6 tháng trở lên</li>
+                    <li>Tích lũy Thiên Thần Nhỏ, Thành Tài, An Cư Lập Nghiệp, Tương lai</li>
+                    <li>Tiền gửi có kỳ hạn từ 1 tháng trở lên</li>
+                    <li>Gói Gia Đình Việt (tiền gửi tiết kiệm theo gói)</li>
 
                 </ul>
             </div>

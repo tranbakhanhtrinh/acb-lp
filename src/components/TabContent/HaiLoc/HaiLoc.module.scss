@@ -1,0 +1,54 @@
+@import '../../../keyframes.scss';
+.HaiLoc{
+    position: relative;
+    background-image: url("../../../assets/images/bg_hailoc.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    animation: opacity 1s;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    .Content{
+        @media screen and (min-width: 1200px){
+            width:50%;
+        }
+        &__header{
+            color: #20419A;
+            text-transform: uppercase;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            span{
+                display: block;
+            }
+            @media screen and (min-width: 1200px) and (max-width: 1500px){
+                font-size: 2rem;
+            }
+        }
+        &__body{
+            margin-bottom: 2rem;
+            ul{
+                list-style-type: none;
+                padding-left:0;
+                li{
+                    background-image: url("../../../assets/images/check.svg");
+                    background-repeat:no-repeat;
+                    background-size: 24px;
+                    background-position: 0px 2px;
+                    padding-left:2.5rem;
+                    font-size: 1.125rem;
+                    color: #000;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        &__ft{
+            img{
+                max-width: 100%;
+                display:block;
+                width:100%;
+            }
+        }
+    }
+}

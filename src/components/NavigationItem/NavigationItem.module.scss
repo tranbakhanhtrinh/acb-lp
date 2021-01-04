@@ -1,9 +1,12 @@
 @import '../../fonts.scss';
 .NavigationItem{
+    background-size: 25px; 
+    background-repeat: no-repeat; 
+    background-position: 15px 18px;
     display:flex;
     align-items:center;
     margin-bottom: 1rem;
-    padding: 1rem 2rem 1rem 3rem;
+    padding: 1rem 0rem 1rem 3rem;
     color: #fff;
     font-size: 1.125rem;
     transition: all 0.5s ease-in-out;

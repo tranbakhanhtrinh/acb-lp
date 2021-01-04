@@ -9,14 +9,14 @@
     animation: opacity 1s;
     display: flex;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem 0 1rem;
     .Content{
         &__header{
             margin-bottom: 2rem;
             p{
                 color: #20419A;
                 text-transform: uppercase;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 margin-bottom: 0;
                 @media screen and (min-width: 1200px) and (max-width: 1500px){
                     font-size: 2rem;
@@ -25,6 +25,9 @@
             .Slogan2AndImg{
                 display: flex;
                 align-items: center;
+                img{
+                    width:100px
+                }
             }
             &__desc{
                 font-size: 1.125rem !important;
@@ -33,6 +36,9 @@
                 strong{
                     color: #00AEEF;
                 }
+            }
+            @media screen and (min-width: 1300px) and (max-width: 1399px) {
+                margin-bottom: 1rem;
             }
         }
         &__body{
@@ -63,6 +69,9 @@
                     color: #00AEEF;
                 }
             }
+            @media screen and (min-width: 1300px) and (max-width: 1399px) {
+                margin-bottom: 1rem;
+            }
         }
         &__ft{
             &__hd{
@@ -74,6 +83,24 @@
                 text-transform: uppercase;
                 font-size: 1.125rem;
                 font-weight: 700;
+                width: max-content;
+                width: -moz-max-content;
+                width: -webkit-max-content;
+            }
+            &__list{
+                list-style-type: none;
+                padding-left:0;
+                margin-bottom: 0;
+                li{
+                    background-image: url("../../../assets/images/check.svg");
+                    background-repeat:no-repeat;
+                    background-size: 24px;
+                    background-position: 0px 2px;
+                    padding-left:2.5rem;
+                    font-size: 1.125rem;
+                    color: #000;
+                    margin-bottom: .7rem;
+                }
             }
         }
     }
@@ -82,8 +109,9 @@
         height: auto;
         display: block;
         margin: 0 auto;
-        @media screen and (min-width: 1200px){
-            width: 40%;
+        width: 40%;
+        @media screen and (min-width: 1300px) and (max-width: 1399px) {
+            width: 39%;
         }
     }
 }

@@ -13,7 +13,8 @@ const home = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true
+        autoplay: true,
+        arrows: false,
     };
     return (
         <div className={classes.Home}>
@@ -22,27 +23,27 @@ const home = () => {
                 <ul>
                     <li>
                         Hái Lộc Xuân
-                            <div>
+                        <div>
                             nhận Lì xì Tết
-                            </div>
+                        </div>
                     </li>
                     <li>
                         Nhận ngay quà tặng
-                            <div>
+                        <div>
                             Phiên Bản Tết
-                            </div>
+                        </div>
                     </li>
                     <li>
                         Cơ hội trúng giải thưởng
-                            <div>
+                        <div>
                             100 triệu VND
-                            </div>
+                        </div>
                     </li>
                     <li>
                         Hàng ngàn giải thưởng
-                            <div>
-                            quà công nghệ với ACB
-                            </div>
+                        <div>
+                            quà công nghệ
+                        </div>
                     </li>
                 </ul>
                 <p>
