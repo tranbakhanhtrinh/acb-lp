@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,12 +7,13 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const root = ReactDOM.createRoot(document.getElementById('root'))
 const app = (
     <React.StrictMode>
         <App />
     </React.StrictMode>
 )
-ReactDOM.render(app, document.getElementById('root'));
+root.render(app);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
